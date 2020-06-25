@@ -29,7 +29,7 @@ def predict_stroke(gender, ever_married, work_type, Residence_type, smoking_stat
 st.sidebar.header('User Input Parameters')
 
 def main():
-    st.title("Brian Stroke Prediction")
+    st.title("Brain Stroke Prediction")
     html_temp = """
     <div style="background-color:tomato;padding:8px">
     <h2 style="color:white;text-align:center;">Brain Stroke Prediction ML App </h2>
@@ -48,16 +48,16 @@ def main():
     This app predicts whether a **Patient will have stroke or not based on some given attributes.**
     """)
     gender = st.sidebar.selectbox("Gender", (0, 1), format_func = genderF.get)
-    ever_married = st.sidebar.selectbox("Ever_married", (0, 1), format_func = YN.get)
-    work_type = st.sidebar.selectbox("Work_type", (0, 1, 2, 3, 4), format_func = WT.get)
-    Residence_type = st.sidebar.selectbox("Residence_type", (0, 1), format_func = RT.get)
-    smoking_status = st.sidebar.selectbox("Smoking_status", (0, 1, 2), format_func = SS.get)
-    #id = st.sidebar.slider("ID", 1, 72938, 50000)
     age = st.sidebar.slider("Age", 18, 90, 54)
     hypertension = st.sidebar.selectbox("Hypertension", (0, 1), format_func = YN.get)
     heart_disease = st.sidebar.selectbox("Heart_disease", (0, 1), format_func = YN.get)
     avg_glucose_level = st.sidebar.slider("Avg_glucose_level", 55.0, 281.60, 100.0)
     bmi = st.sidebar.slider("BMI", 10.0, 92.0, 30.0)
+    smoking_status = st.sidebar.selectbox("Smoking_status", (0, 1, 2), format_func = SS.get)
+    ever_married = st.sidebar.selectbox("Ever_married", (0, 1), format_func = YN.get)
+    work_type = st.sidebar.selectbox("Work_type", (0, 1, 2, 3, 4), format_func = WT.get)
+    Residence_type = st.sidebar.selectbox("Residence_type", (0, 1), format_func = RT.get)
+
 
     if st.button("About"):
         st.text("This web app predicts the chance of developing stroke based on RandomForestClassifier")
